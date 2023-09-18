@@ -1,13 +1,23 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
 package kartyatrukkkonzolon;
 
-/**
- *
- * @author paloci.erno
- */
 public class Lap {
-    
+
+    private String[] szinek;// = {"P", "T", "Z", "M"};
+    private String[] ertekek;// = {"Ász", "Kir", "Fel", "X", "IX", "VIII"};
+
+    /*public Lap(szinek, ertekek) {
+        
+         this.szinek = szinek;
+         this.ertekek = ertekek;
+    }
+    */
+
+    public String[] getSzinek() {
+        return szinek;
+    }
+
+    public String[] getErtekek() {
+        return ertekek;
+    }
+
 }
