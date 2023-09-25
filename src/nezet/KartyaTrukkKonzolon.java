@@ -13,6 +13,8 @@ public class KartyaTrukkKonzolon {
     public KartyaTrukkKonzolon() {
         KartyaTrukkKonzolon.scr = new Scanner(System.in);
         indit();
+        System.out.println(pakli.kirak());
+        System.out.printf("Választott lap: %s\n",pakli.ezVolt());
     }
     
     private int melyik(){

@@ -1,14 +1,15 @@
 package modell;
 
 public class Pakli {
+
     private Lap[] lapok;
-    
-    public Pakli(){
+
+    public Pakli() {
         feltolt();
     }
-    
-    private void feltolt(){
-        lapok=new Lap[22];
+
+    private void feltolt() {
+        lapok = new Lap[22];
         String[] szinek = {"P", "T", "Z", "M"};
         String[] ertekek = {"Ász", "Kir", "Fel", "X", "IX", "VIII"};
         int i = 1;
@@ -18,17 +19,19 @@ public class Pakli {
             }
         }
     }
-    
-    public void kirak(){
+
+    public String kirak() {
+        String kirak = "";
         for (int i = 1; i < lapok.length; i++) {
-            System.out.printf("%-8s", lapok[i].getLeiras());
+            kirak += String.format("%-8s", lapok[i].getLeiras());
             if (i % 3 == 0) {
-                System.out.println("");
+                kirak += "\n";
             }
         }
+        return kirak;
     }
-    
-    public void kever(int oszlop){
+
+    public void kever(int oszlop) {
         Lap[] ujPakli = new Lap[22];
         switch (oszlop) {
             case 1 -> {
@@ -55,8 +58,8 @@ public class Pakli {
         }
         lapok = ujPakli;
     }
-    
-    public void ezVolt(){
-        System.out.println("A választott lap: " + lapok[11].getLeiras());
+
+    public String ezVolt() {
+        return lapok[11].getLeiras();
     }
 }
