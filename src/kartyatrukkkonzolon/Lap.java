@@ -2,22 +2,27 @@ package kartyatrukkkonzolon;
 
 public class Lap {
 
-    private String[] szinek;// = {"P", "T", "Z", "M"};
-    private String[] ertekek;// = {"Ász", "Kir", "Fel", "X", "IX", "VIII"};
+    private String[] aPakli = new String[22];
 
-    /*public Lap(szinek, ertekek) {
-        
-         this.szinek = szinek;
-         this.ertekek = ertekek;
-    }
-    */
-
-    public String[] getSzinek() {
-        return szinek;
+    public Lap() {
+        feltoltPaklit();
     }
 
-    public String[] getErtekek() {
-        return ertekek;
+    private void feltoltPaklit() {
+        String[] szinek = {"P", "T", "Z", "M"};
+        String[] ertekek = {"Ász", "Kir", "Fel", "X", "IX", "VIII"};
+
+        int index = 1;
+        for (String szin : szinek) {
+            for (String ertek : ertekek) {
+                aPakli[index++] = szin + "_" + ertek;
+            }
+        }
     }
+
+    public String[] getPakli() {
+        return aPakli;
+    }
+
 
 }
