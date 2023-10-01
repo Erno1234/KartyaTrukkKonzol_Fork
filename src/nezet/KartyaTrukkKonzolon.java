@@ -3,21 +3,27 @@ package nezet;
 import java.util.Scanner;
 import modell.Pakli;
 
-public class KartyaTrukkKonzolon {
+public final class KartyaTrukkKonzolon {
 
     private static Scanner scr;
     Pakli pakli = new Pakli();
-    
-    
-    
+
+    public void pakliFormazKiir(String[] kartyaPakli) {
+        for (int i = 1; i < kartyaPakli.length; i++) {
+            System.out.printf("%-8s", kartyaPakli[i]);
+            if (i % 3 == 0) {
+                System.out.println("");
+            }
+        }
+    }
+
     public KartyaTrukkKonzolon() {
         KartyaTrukkKonzolon.scr = new Scanner(System.in);
         indit();
-        System.out.println(pakli.kirak());
-        System.out.printf("Választott lap: %s\n",pakli.ezVolt());
+        System.out.printf("Választott lap: %s\n", pakli.ezVolt());
     }
-    
-    private int melyik(){
+
+    private int melyik() {
         boolean jo;
         int oszlop;
         do {
@@ -27,10 +33,11 @@ public class KartyaTrukkKonzolon {
         } while (!jo);
         return oszlop;
     }
-    
-    public void indit(){
+
+    public void indit() {
         for (int i = 0; i < 3; i++) {
-            pakli.kirak();
+            String[] kartyaPakli = pakli.kirak();
+            pakliFormazKiir(kartyaPakli);
             int oszlop = melyik();
             pakli.kever(oszlop);
         }

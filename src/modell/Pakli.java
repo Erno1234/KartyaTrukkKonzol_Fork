@@ -20,15 +20,13 @@ public class Pakli {
         }
     }
 
-    public String kirak() {
-        String kirak = "";
+    public String[] kirak() {
+        String[] kartyak = new String[lapok.length];
+        int kartyakIndex = 0;
         for (int i = 1; i < lapok.length; i++) {
-            kirak += String.format("%-8s", lapok[i].getLeiras());
-            if (i % 3 == 0) {
-                kirak += "\n";
-            }
+            kartyak[kartyakIndex++] = lapok[i].getLeiras();
         }
-        return kirak;
+        return kartyak;
     }
 
     public void kever(int oszlop) {
